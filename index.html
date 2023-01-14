@@ -1,0 +1,220 @@
+<!DOCTYPE html> <!-- This is a comment, I want to say here that the doctype html stuff in brackets means that this tell browsers that this is a html file document-->
+<html lang="en"> <!-- The lang attribute helps define the language of an element-->
+
+
+<head>
+     
+   <meta charset="UFT-8"> <!-- To make sure that the webpage can display any character from any human languages, without any issues in different browsers. -->
+   <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- if you use your website in the same network as the server Internet Explorer likes to switch to compability mode despite DOCTYPE. Adding this disables this unwanted behaviour -->
+   <meta name = "viewport" content="width=device-width, initial-scale = 1.0"> <!-- The viewport meta tag tells the browser that the width of the screen should be considered the 
+    "Full Width" of the page. Meaning no matter the width of the device you are on, whether on desktop or mobile. the website will follow the width of the device the user is on. 
+    width=device-width sets the webpages width to the width of the device screen. initial-scale=1.0 sets the initial zoom level of the webpage when it's loaded. Without this meta 
+    tag you would notice everything on a mobile would be very small and squeezed to fit the content to look the same as it does on a monitor.-->
+   <title>Mateo Nieto Galindo - Portfolio Website</title> 
+   <link rel="stylesheet" href="style.css"> <!--This will connect the html and css file :)-->
+
+   <script src="https://kit.fontawesome.com/f046a476c5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div id="header">
+      <div class="container">
+      
+         <nav>
+            <img src="Images/MN (1).png" class="logo">
+            <ul id="sidemenu"> 
+               <li> <a href="#header">Home</a> </li>
+               <li> <a href="#about">About</a> </li>
+               <li> <a href="#portfolio">Portfolio</a> </li>
+               <li> <a href="#contact">Contact</a> </li>
+               <i class="fas fa-sharp fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
+         </nav>
+         <div class="header-text">
+            <p>Montreal, Canada.</p>
+            <h1>Hi there, I'm <span> Mateo Nieto. </span> <br> A computer science student at Concordia University.  </h1>
+         </div>
+
+      </div>
+
+</div>
+
+<!------------------about----------------->
+<div id="about">
+
+<div class="container">
+<div class="row">
+   <div class="about-col-1">
+    <img src="Images/IMG_0156.jpg">
+   </div>
+   <div class="about-col-2">
+<h1 class="sub-title">About Me</h1>
+<p>I am a computer science student from Canada, currently pursuing my studies at Concordia University. 
+   I am driven by a passion for learning and growth, and I am actively seeking an internship opportunity to further expand my knowledge and skills in programming. 
+   Additionally, I am always on the lookout for new projects that will challenge me and deepen my understanding of various programming languages. </p>
+
+<div class="tab-titles"> 
+<p class="tab-links active-link" onclick ="opentab('skills')">Skills</p>
+<p class="tab-links" onclick="opentab('education')">Education</p>
+</div>
+<div class="tab-contents active-tab" id="skills">
+   <ul>
+      <li><span>Object-Oriented Programming (OOP) with Java</span></li>
+      <li><span>Web Development (Beginner) with HTML & CSS</span></li>
+   </ul>
+</div>
+
+
+
+<div class="tab-contents" id="education">
+   <ul>
+      <li><span>Bachelor of Computer Science at Concordia University (2022-2025) </span></li>
+      <li><span>Health Science at Dawson College (2020-2022) </span></li>
+   </ul>
+</div>
+
+
+
+   </div>
+</div>
+
+</div>
+
+</div>
+
+
+<!---------------------------------Portfolio----------------------------------------------->
+
+<div id="portfolio">
+<div class="container">
+<h1 class = "sub-title">Portfolio</h1>
+<div class="work-list">
+   <div class="work">
+      <img src="Images/snake-game-icon.png">
+      <div class="layer">
+         <h3>Snake Game - Github</h3>
+         <p>A snake game that was made using Java.</p>
+         <a href="https://github.com/nicomat0/Snake-Game-Java/tree/main/Snake%20Game"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+   </div>
+</div>
+   
+</div>
+
+
+
+</div>
+
+<!------------------------------------------------Contact------------------------------------------------->
+
+<div id="contact">
+<div class="container">
+<div class="row">
+   <div class="contact-left"> 
+      <h1 class = "sub-title">Contact</h1>
+      <p> <i class="fa-solid fa-envelope"></i> nicoma_ng@outlook.com</p>
+      <div class="social-icons">
+         <a href="https://www.linkedin.com/in/mateonietogalindo/"><i class="fa-brands fa-linkedin"></i></a>
+         <a href="https://github.com/nicomat0"><i class="fa-brands fa-github"></i></a>
+      </div>
+
+
+   </div>
+   <div class="contact-right">
+      <form name="submit-to-google-sheet" autocomplete="off">
+<input type="text" name="Name" placeholder="Enter Your Name" required autocomplete="off">
+<input type="email" name="Email" placeholder="Enter Your Email" required autocomplete="off">
+<textarea name="Message"  rows="6" placeholder="Enter Your Message" autocomplete="off"></textarea>
+<button type = "submit" class="btn btn2">Send</button>
+
+
+      </form>
+
+      <span id="msg"></span>
+       </div>
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+
+function opentab(tabname){
+for(tablink of tablinks)
+{
+   tablink.classList.remove("active-link");
+   
+
+}
+
+for(tabcontent of tabcontents)
+{
+   tabcontent.classList.remove("active-tab");
+   
+
+}
+
+event.currentTarget.classList.add("active-link");
+
+document.getElementById(tabname).classList.add("active-tab");
+
+}
+
+
+
+</script>
+
+
+<script>
+
+var sidemenu = document.getElementById("sidemenu")
+
+function openmenu()
+{
+   sidemenu.style.right = "0";
+}
+
+function closemenu()
+{
+   sidemenu.style.right = "-200px";
+}
+
+</script>
+
+<script>
+   const scriptURL = 'https://script.google.com/macros/s/AKfycbwqMiLxAa7gqxE5CjJhhDrcBzgHnCbXfbQJLMigPibp5lT910zEMHMQTGJg6Cup5dyn/exec'
+   const form = document.forms['submit-to-google-sheet']
+   const msg = document.getElementById("msg")
+ 
+   form.addEventListener('submit', e => {
+     e.preventDefault()
+     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+       .then(response => {
+         msg.innerHTML = "Message has been sent succesfully" 
+         setTimeout(function(){
+         msg.innerHTML = ""
+       },5000)
+
+      form.reset()
+
+      })
+       .catch(error => console.error('Error!', error.message))
+   })
+ </script>
+
+</body> <!-- inside the body we add elements that will appear on the page. -->
+
+
+
+
+
+
+
+</html> <!-- On the left side we have the opening tag, the last one over here is the closing tag. Inside this element, we add additional elements. We add 2 elements, head and body. We use head to give the browser
+information about this page. For example, we can use title to specify the title of the page that appears in the browser.-->
